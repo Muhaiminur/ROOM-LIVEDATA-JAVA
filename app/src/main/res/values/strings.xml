@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ROOM LIVEDATA</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="zero_string">0</string>
+    <string name="cart_string">Cart</string>
+    <string name="livedata_check_string">LIVE DATA CHECK</string>
+    <string name="title_normal">LIVEDATA NORMAL</string>
+    <string name="title_dynamic">LIVEDATA DYNAMIC</string>
+    <string name="title_set">LIVEDATA SET</string>
+</resources>
