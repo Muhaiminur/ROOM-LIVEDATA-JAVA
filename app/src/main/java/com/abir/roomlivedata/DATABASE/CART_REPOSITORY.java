@@ -5,6 +5,11 @@ import android.os.AsyncTask;
 
 import androidx.lifecycle.LiveData;
 
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
 public class CART_REPOSITORY {
     CART_DAO cartDao;
     LiveData<CART_MODEL> listMutableLiveData;
@@ -141,5 +146,21 @@ public class CART_REPOSITORY {
             mAsyncTaskDao.updatecartdata(old_data, new_data);
             return null;
         }
+    }
+
+
+    //get from database
+    public CART_MODEL getuserData() throws ExecutionException, InterruptedException {
+
+        Callable<CART_MODEL> callable = new Callable<CART_MODEL>() {
+            @Override
+            public CART_MODEL call() throws Exception {
+                return cartDao.user_profile();
+            }
+        };
+
+        Future<CART_MODEL> future = Executors.newSingleThreadExecutor().submit(callable);
+
+        return future.get();
     }
 }

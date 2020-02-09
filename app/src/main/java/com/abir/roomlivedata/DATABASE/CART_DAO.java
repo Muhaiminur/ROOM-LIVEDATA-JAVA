@@ -33,4 +33,7 @@ public interface CART_DAO {
 
     @Query("UPDATE cart_table SET cartNumber=:new_cart WHERE cartNumber = :old_cart")
     void updatecartdata(String old_cart, String new_cart);
+
+    @Query("SELECT * FROM cart_table")
+    CART_MODEL user_profile();
 }
